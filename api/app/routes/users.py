@@ -17,16 +17,6 @@ user_router = APIRouter(
 )
 
 
-@user_router.get('/usuarios/')
-def show_users(db: Session = Depends(get_session)):
-    usuarios = db.query(User).all()
-    return usuarios
-
-@user_router.get('/me')
-def decode_token(token:str) -> dict:
-    return decodeJWT(token)
-
-
 @user_router.post("/signup")
 async def sign_user_up(db: Session = Depends(get_session),
                        email: EmailStr = Form(
