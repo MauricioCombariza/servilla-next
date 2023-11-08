@@ -1,7 +1,7 @@
 import { Layout } from "../../components/Layout";
 import { useState } from 'react';
 import Container from '@mui/material/Container';
-import axios from 'axios';
+import axios from "axios";
 import { useAuth } from '../../Auth';
 import { LoadingSpinner } from "../../components/LoadingSpinner";  // Ajusta la ruta a tu ubicación real del componente
 
