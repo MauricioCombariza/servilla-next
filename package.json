@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "fastapi-dev": "pip3 install -r requirements.txt && python3 api/main.py",
+    "next-dev": "next dev",
+    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"next start\" \"python3 api/main.py\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,13 +18,16 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.2",
     "chart.js": "^4.4.0",
     "cloudinary-react": "^1.8.1",
+    "concurrently": "^8.1.0",
     "next": "13.5.6",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
-    "styled-components": "^6.1.0"
+    "styled-components": "^6.1.0",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
